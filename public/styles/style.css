@@ -1,0 +1,627 @@
+/*================================     Собственные стили     ================================*/
+/*--------------------------------        Общие стили        --------------------------------*/
+/*--------------------------------         Basic HTML        --------------------------------*/
+html, body {
+    height: 100%;
+    line-height: 1.42;
+    font-size: 16px;
+    color: #333;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    background-color: aliceblue;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+    text-align: center;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+/*--------------------------------      Forms and Input      --------------------------------*/
+.button {
+    background: none;
+    color: #333;
+    border: none;
+    margin: 0 10px;
+    border-radius: 4px;
+    padding: 5px 15px;
+}
+
+.button:hover {
+    background-color: #d8dfe6;
+}
+
+label {
+    display: block;
+    cursor: pointer;
+}
+
+fieldset,
+legend {
+    margin: 0;
+    padding: 0;
+    padding-inline: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+fieldset {
+    margin-inline: 0;
+    padding-block: 0;
+}
+
+/*--------------------------------           Links           --------------------------------*/
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*--------------------------------           Lists           --------------------------------*/
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+ol {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 0;
+}
+
+/*--------------------------------           Tables          --------------------------------*/
+table {
+    table-layout: fixed;
+    width: 100%;
+    border: 1px solid #eee;
+    border-collapse: collapse;
+}
+
+table th {
+    padding: 5px;
+    border: 1px solid #dddddd;
+    background-color: #efefef;
+}
+
+table td {
+    text-align: left;
+    padding: 5px 10px;
+    border: 1px solid #eee;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: white;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f3f9ff;
+}
+
+/*--------------------------------    Styles and Semantics   --------------------------------*/
+header {
+    flex: 0 0 auto;
+    padding: 20px 0;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex: 0 0 auto;
+    padding: 36px 50px 36px;
+}
+
+
+/*--------------------------------           Другое           --------------------------------*/
+*,
+:before,
+:after {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.content {
+    padding: 16px 40px;
+    border-radius: 12px;
+    background-color: #fff;
+}
+
+/*--------------------------------       Адаптивность        --------------------------------*/
+@media screen and (max-width: 1025px) {
+    .container {
+    }
+
+    .content {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .content {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    html,
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    header {
+        padding: 10px 0;
+    }
+
+    nav a {
+        text-align: center;
+    }
+
+    nav a.button {
+        padding: 5px;
+    }
+
+    .content {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+/*--------------------------------       Стиль штрафы        --------------------------------*/
+.authorisation-block {
+    width: 400px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.authorisation-block fieldset {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#car_number {
+    text-align: center;
+    font-weight: bold;
+}
+
+.authorisation-block fieldset input {
+    margin-top: 16px;
+    padding: 4px;
+    text-align: center;
+    font-size: 24px;
+}
+
+#registered_number {
+    width: 150px;
+}
+
+#registered_region {
+    width: 75px;
+}
+
+.sign-in {
+    margin-top: 16px;
+}
+
+.sign-in, .submit {
+    background-color: #dcdcdc;
+}
+
+.sign-in:hover, .submit:hover {
+    cursor: pointer;
+    background-color: #eaeaea;
+}
+
+/*--------------------------------          Стрелки          --------------------------------*/
+.arrow {
+    border: solid #333;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 4px;
+}
+
+.up {
+    transform: translateY(-50%) rotate(-135deg);
+}
+
+.down {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+/*--------------------------------           Ошибка          --------------------------------*/
+.error {
+    border-color: #FF3B30;
+}
+/*-------------------------------------------------------------------------------------------*/
+
+.fines-block {
+    /*display: none;*/
+    padding-bottom: 40px;
+}
+
+@media screen and (max-width: 1025px) {
+    .fines-block {
+        padding-bottom: 32px;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .fines-block {
+        padding-bottom: 24px;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .fines-block {
+        padding-bottom: 16px;
+    }
+}
+
+.fine-payments-block {
+    margin-top: 16px;
+}
+
+.fine-payment-wrap-block {
+    margin-top: 16px;
+}
+
+.fine-payment-wrap {
+    position: relative;
+    cursor: pointer;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    background-color: #dcdcdc;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fine-payment-wrap:hover {
+    background-color: #eaeaea;
+}
+
+.fine-payment-wrap.open {
+    border-radius: 8px 8px 0 0;
+}
+
+.fine-checkbox {
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+}
+
+.fine-checkbox label {
+    margin-left: 4px;
+}
+
+.fine-payment-wrap p {
+    margin-right: 32px;
+}
+
+.fine-payment-wrap .arrow {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+}
+
+.fine-payment-block {
+    display: none;
+    padding: 16px;
+    background-color: #f8f8f8;
+    border-radius: 0 0 8px 8px;
+}
+
+.fine-payment-block p {
+    margin-top: 8px;
+}
+
+.payment-block {
+    margin-top: 16px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+}
+
+.form-group-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.form-group-row input,
+.form-group-row select,
+.car-number-input {
+    margin-left: 10px;
+    width: 150px;
+}
+
+.payment-block .button {
+    margin: 0;
+}
+
+/*--------------------------------Стиль панели администратора--------------------------------*/
+.add-the-driver-form-block legend,
+.add-the-fine-form-block legend {
+    font-weight: bold;
+}
+
+.add-the-driver-form-block .form-group-row,
+.add-the-fine-form-block .form-group-row {
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+.add-the-driver-block .form-group-row {
+    width: 300px;
+}
+
+.add-the-driver-form-block .button.submit,
+.add-the-fine-form-block .button.submit {
+    margin: 16px 0 0;
+}
+
+/*--------------------------------Стиль панели администратора--------------------------------*/
+.add-the-driver-form-block {
+}
+
+.add-the-driver-block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.driver-form {
+}
+
+.car-number-and-name-form {
+    margin-left: 64px;
+}
+
+.car-number-input {
+}
+
+.car-number-input input {
+    margin: 0;
+}
+
+.car-number-and-name-form #car_number {
+    text-align: left;
+    font-weight: normal;
+}
+
+.car-number-and-name-form #registered_number {
+    width: 70px;
+}
+
+.car-number-and-name-form #registered_region {
+    width: 35px;
+}
+
+#add-the-driver-button {
+
+}
+
+/*--------------------------------        Уведомление        --------------------------------*/
+.popup {
+    background: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 50px;
+    padding: 15px 30px;
+    max-height: 100vh;
+}
+
+.popup-wrap {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: #030303af;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+/*--------------------------------Стиль панели администратора--------------------------------*/
+.add-the-fine-form-block {
+    margin-top: 16px;
+}
+
+.add-the-fine-block {
+    margin-top: 8px;
+}
+
+.fine-driver-form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fine-car-form {
+}
+
+.offense-title-and-article-form {
+}
+
+.offense-title-and-article-form select {
+    max-width: 400px;
+}
+
+.add-the-fine-block fieldset:nth-child(n+2) {
+    margin-top: 16px;
+}
+
+.add-the-fine-block .form-group-row {
+    display: inline-flex;
+}
+
+.add-the-fine-block .form-group-row:nth-child(n+3) {
+    margin-left: 32px;
+}
+
+.add-the-fine-block select,
+.add-the-fine-block input {
+    width: auto;
+}
+
+.offence-article-description-wrap-block {
+    margin-top: 16px;
+    display: none;
+}
+
+.offence-article-description-wrap {
+    position: relative;
+    cursor: pointer;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    background-color: #dcdcdc;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.offence-article-description-wrap:hover {
+    background-color: #eaeaea;
+}
+
+.offence-article-description-wrap.open {
+    border-radius: 8px 8px 0 0;
+}
+
+.offence-article-description-wrap h3 {
+    margin-left: 8px;
+}
+
+.offence-article-description-wrap .arrow {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+}
+
+.offence-article-description-block {
+    display: none;
+    padding: 16px;
+    background-color: #f8f8f8;
+    border-radius: 0 0 8px 8px;
+}
+
+.offence-article-description-block p:nth-child(n+2) {
+    margin-top: 8px;
+}
+
+.date-and-punishment-form {
+}
+
+#pay_bill_amount {
+    width: 100px;
+}
+
+.date-and-punishment-form span {
+    margin-left: 4px;
+}
+
+/* START Cookie-Alert */
+#cookie_note{
+    display: none;
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    max-width: 90%;
+    transform: translateX(-50%);
+    padding: 20px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+#cookie_note p{
+    margin: 0;
+    font-size: 0.7rem;
+    text-align: left;
+    color: black;
+}
+
+.cookie_accept{
+    width:20%;
+}
+@media (min-width: 576px){
+    #cookie_note.show{
+        display: flex;
+    }
+}
+
+@media (max-width: 575px){
+    #cookie_note.show{
+        display: block;
+        text-align: left;
+    }
+}
+/* END Cookie-Alert */

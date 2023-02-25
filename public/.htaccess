@@ -1,0 +1,41 @@
+# Настройка модуля mod_rewrite
+<IfModule mod_rewrite.c>
+    # Настройка модуля mod_negotiation
+    <IfModule mod_negotiation.c>
+        # -Indexes - отключает возможность смотреть содержимое директории, при отсутсвии файлов index.(php\html)
+        # -MultiViews - отключает поиск при запросе несуществующего файла во всей директории
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    # Включает работу механизма преобразований адресов (для работы RewriteRule)
+    RewriteEngine on
+
+    # Правило убирающее "/" в конце запроса
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Правило убирающее повторяющиеся "/" из запроса
+    RewriteCond %{THE_REQUEST} //
+    RewriteRule .* /$0 [R=301,L]
+
+    # Основное правило
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+# Вывод ошибок в логи (Пока не работает)
+#php_flag display_startup_errors on
+#php_flag display_errors on
+#php_flag html_errors on
+#php_flag log_errors on
+#php_flag ignore_repeated_errors off
+#php_flag ignore_repeated_source off
+#php_flag report_memleaks on
+#php_flag track_errors on
+#php_value docref_root 0
+#php_value docref_ext 0
+#php_value error_log ~/runtime/log/PHP_errors.log
+#php_value error_reporting -1
+#php_value log_errors_max_len 0
