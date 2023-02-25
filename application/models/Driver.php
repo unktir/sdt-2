@@ -53,7 +53,7 @@ class Driver
             'last_name' => $full_name['last_name'],
             'first_name' => $full_name['first_name'],
             'middle_name' => $full_name['middle_name']
-        ])->find()['id'];
+        ])->find();
     }
 
     public function getCarListByDriverId($driver_id)

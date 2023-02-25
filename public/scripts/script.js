@@ -216,8 +216,6 @@ function get_car_list_by_full_name() {
     let last_name = fine_form.elements.pay_last_name.value;
 
     if (!(first_name == null || first_name === "") && !(middle_name == null || middle_name === "") && !(last_name == null || last_name === "")) {
-        car_select.prop('disabled', false);
-
         $.ajax({
             url: '/admin/getCarList',
             method: 'GET',
