@@ -13,14 +13,18 @@ if (!empty($_GET)) {
         $id = $result['id'];
         $car_list = $driver_class->getCarListByDriverId($id);
 
-        echo "<option hidden='' value=''>Выберите автомобиль</option>";
-        foreach ($car_list as $key => $car): ?>
-            <option value="<?= $car['id'] ?>">
-                <?= $car['auto_name'], ' [', $car['auto_number'], '][', $car['auto_region'], ']' ?>
-            </option>
-        <?php
-        endforeach;
+        if (empty($car_list)) {
+            echo "<option value=''>Нет зарегистрированных авто</option>";
+        } else {
+            echo "<option hidden='' value=''>Выберите автомобиль</option>";
+            foreach ($car_list as $key => $car): ?>
+                <option value="<?= $car['id'] ?>">
+                    <?= $car['auto_name'], ' [', $car['auto_number'], '][', $car['auto_region'], ']' ?>
+                </option>
+            <?php
+            endforeach;
+        }
     } else {
-        echo "<option hidden='' value=''>Выберите автомобиль</option>";
+        echo "<option value=''>Водитель не зарегистрирован</option>";
     }
 }

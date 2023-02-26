@@ -227,10 +227,7 @@ function get_car_list_by_full_name() {
             },
             success: function (option) {
                 car_select.html(option);
-                if (document.getElementById('car_id').options.length > 1)
-                    car_select.prop('disabled', false);
-                else
-                    car_select.prop('disabled', true);
+                car_select.prop('disabled', false);
             }
         });
     } else {
