@@ -239,7 +239,6 @@ function get_car_list_by_full_name() {
 function get_article_by_chapter_id() {
     let chapter_select = $('#chapter_id');
     let article_select = $('#offense_id');
-    // select_article.prop("selected", false);
     $.ajax({
         url: '/admin/getOffensesArticle',
         method: 'GET',
@@ -249,10 +248,7 @@ function get_article_by_chapter_id() {
         },
         success: function (option) {
             article_select.html(option);
-            if (!(document.getElementById('data-null-yet')))
-                article_select.prop('disabled', false);
-            else
-                article_select.prop('disabled', true);
+            article_select.prop('disabled', false);
         }
     });
 }
