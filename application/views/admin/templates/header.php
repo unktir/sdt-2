@@ -1,7 +1,7 @@
 <header>
     <div class="container">
         <nav>
-            <a class="button" href="#">
+            <a class="button" href="/">
                 Оплатить штрафы
             </a>
             <div class="functionality">

@@ -1,7 +1,7 @@
 <header>
     <div class="container">
         <nav>
-            <a class="button" href="#">
+            <a class="button" href="/admin">
                 Страница администратора
             </a>
             <div class="functional">
