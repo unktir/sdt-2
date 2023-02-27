@@ -14,13 +14,15 @@ class Driver
         $this->db = App::resolve(Database::class);
     }
 
-    public function addDriver($driver_data = [])
+    public function addDriverAndCar($driver_data = [], $car_data = [])
     {
         $this->db->query('insert into drivers (last_name, first_name, middle_name) values (:last_name, :first_name, :middle_name)', [
             'last_name' => $driver_data['last_name'],
             'first_name' => $driver_data['first_name'],
             'middle_name' => $driver_data['middle_name']
         ]);
+        $driver_id = $this->findDriverIdByFullName($driver_data)['id'];
+        $this->addCar($driver_id, $car_data);
     }
 
     public function addCar($driver_id, $auto_data = [])
@@ -45,6 +47,14 @@ class Driver
             'last_bill_date' => $car_offense['last_bill_date'],
             'pay_bill_amount' => $car_offense['pay_bill_amount']
         ]);
+    }
+
+    public function findCarIdByGovRegNum($auto_number, $auto_region)
+    {
+        return $this->db->query('select id from cars where auto_number = :auto_number and auto_region = :auto_region', [
+            'auto_number' => $auto_number,
+            'auto_region' => $auto_region
+        ])->find();
     }
 
     public function findDriverIdByFullName($full_name = [])

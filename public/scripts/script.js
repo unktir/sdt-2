@@ -122,12 +122,10 @@ $(document).ready(function () {
                 method: 'POST',
                 dataType: 'html',
                 data: $(this).serialize(),
-                success: function () {
+                success: function (popup_message) {
                     document.getElementById('add-the-fine-form').reset();
-                    //document.getElementById('add-the-driver-button').onclick = function () {
-                    //    get_car_list_by_full_name();
-                    //};
-                    $('main').append($('<div class="popup-wrap"><div class="popup">Водитель и/или автомобиль добавлен!</div></div>'));
+                    $('main').append($('<div class="popup-wrap"><div class="popup" id="popup_message"></div></div>'));
+                    document.getElementById('popup_message').innerHTML = popup_message;
                     $(document).on('click', function () {
                         $('.popup-wrap').remove();
                     });
