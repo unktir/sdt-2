@@ -143,7 +143,7 @@ $(document).ready(function () {
             dataType: 'html',
             data: $(this).serialize(),
             success: function (message) {
-                document.getElementById('add-the-fine-form').reset();
+                // document.getElementById('add-the-fine-form').reset();
                 pop_up_message(message);
             }
         });
