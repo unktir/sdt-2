@@ -22,7 +22,11 @@ if (!empty($_POST)) {
         'pay_bill_amount' => intval($pay_bill_amount)
     ];
 
+    // Валидация данных
+
     $driver_class = new Driver();
 
     $driver_class->addCarOffense($new_car_offense);
+
+    echo 'Штраф добавлен!';
 }

@@ -8,6 +8,14 @@ function arrow_swap(p) {
         p.removeClass('up').addClass('down');
 }
 
+function pop_up_message(message) {
+    $('main').append($('<div class="popup-wrap"><div class="popup" id="popup_message"></div></div>'));
+    document.getElementById('popup_message').innerHTML = message;
+    $(document).on('click', function () {
+        $('.popup-wrap').remove();
+    });
+}
+
 // Регулярное выражение для гос. рег. номера
 let reg_num_regexp = /^[АВЕКМНОРСТУХавекмнорстух]{1}[0-9]{3}(?<!0{3})[АВЕКМНОРСТУХавекмнорстух]{2}$/u;
 let reg_reg_regexp = /\d{2,3}$/u;
@@ -65,10 +73,7 @@ $(document).ready(function () {
             data: $(this).serialize(),
             success: function () {
                 document.getElementById('sign-in-form').reset();
-                $('main').append($('<div class="popup-wrap"><div class="popup">Вы вошли!</div></div>'));
-                $(document).on('click', function () {
-                    $('.popup-wrap').remove();
-                });
+                pop_up_message('Вы вошли!');
             }
         });
     });
@@ -122,13 +127,9 @@ $(document).ready(function () {
                 method: 'POST',
                 dataType: 'html',
                 data: $(this).serialize(),
-                success: function (popup_message) {
+                success: function (message) {
                     document.getElementById('add-the-fine-form').reset();
-                    $('main').append($('<div class="popup-wrap"><div class="popup" id="popup_message"></div></div>'));
-                    document.getElementById('popup_message').innerHTML = popup_message;
-                    $(document).on('click', function () {
-                        $('.popup-wrap').remove();
-                    });
+                    pop_up_message(message);
                 }
             });
         }
@@ -141,12 +142,9 @@ $(document).ready(function () {
             method: 'POST',
             dataType: 'html',
             data: $(this).serialize(),
-            success: function () {
+            success: function (message) {
                 document.getElementById('add-the-fine-form').reset();
-                $('main').append($('<div class="popup-wrap"><div class="popup">Штраф добавлен!</div></div>'));
-                $(document).on('click', function () {
-                    $('.popup-wrap').remove();
-                });
+                pop_up_message(message);
             }
         });
     });
