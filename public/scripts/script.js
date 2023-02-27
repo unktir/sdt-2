@@ -55,12 +55,12 @@ $(document).ready(function () {
         $('.authorisation-block').show();
         $('.fines-block').hide();
     });
-    //
+    // Принятие формы входа
     $('#sign-in-form').on('submit', function (e) {
         e.preventDefault();
         $.ajax({
-            url: '../controller/SignInController.php',
-            method: 'post',
+            url: '/signIn',
+            method: 'POST',
             dataType: 'html',
             data: $(this).serialize(),
             success: function () {
@@ -95,7 +95,7 @@ $(document).ready(function () {
 /*-------------------------------Скрипты панели администратора-------------------------------*/
 //
 $(document).ready(function () {
-    //
+    // Раскрытие и закрытие гармошки описания штрафов
     $('.offence-article-description-wrap').on('click', function () {
         let qsw = $(this);
         let qwsb = $('.offence-article-description-block', qsw.parent());
@@ -153,7 +153,7 @@ $(document).ready(function () {
         });
     });
 
-    //
+    // При изменение ФИО вызывает функцию для получения списка авто
     document.getElementById('pay_first_name').onchange = function () {
         get_car_list_by_full_name()
     };
@@ -163,11 +163,11 @@ $(document).ready(function () {
     document.getElementById('pay_last_name').onchange = function () {
         get_car_list_by_full_name()
     };
-    //
+    // При изменение раздела вызывает функцию для получения списка статей
     document.getElementById('chapter_id').onchange = function () {
         get_article_by_chapter_id()
     };
-    //
+    // При изменение статьи вызывает функцию для получения описания статьи
     document.getElementById('offense_id').onchange = function () {
         get_description_by_article_id()
     };
@@ -253,7 +253,7 @@ function get_article_by_chapter_id() {
     });
 }
 
-// Функция создания описания нарушения с помощью Раздела и Статьи
+// Функция создания описания нарушения с помощью Статьи
 function get_description_by_article_id() {
     let chapter_select = $('#chapter_id')
     let article_select = $('#offense_id');

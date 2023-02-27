@@ -1,11 +1,11 @@
 <main>
         <div class="container">
-            <!-- Добавить водителя -->
+            <!-- Форма добавления водителя и/или автомобиля -->
             <section class="add-the-driver-form-block content">
                 <h2>Добавить водителя и/или автомобиль</h2>
                 <form id="add-the-driver-form" name="add-the-driver-form">
                     <div class="add-the-driver-block">
-                        <!-- Форма водителя -->
+                        <!-- Поле формы водителя -->
                         <fieldset class="driver-form">
                             <legend>ФИО водителя</legend>
                             <div class="form-group-row">
@@ -24,7 +24,7 @@
                                        placeholder="Иванович">
                             </div>
                         </fieldset>
-                        <!-- Форма автомобиля -->
+                        <!-- Поле формы автомобиля -->
                         <fieldset class="car-number-and-name-form">
                             <legend>Гос. рег. номер и название авто</legend>
                             <div class="form-group-row">
@@ -48,12 +48,12 @@
                     <button class="button submit" id="add-the-driver-button" type="submit">Добавить</button>
                 </form>
             </section>
-            <!-- Составление нарушения -->
+            <!-- Форма составления нарушения -->
             <section class="add-the-fine-form-block content">
                 <h2>Составление нарушения</h2>
                 <form id="add-the-fine-form" name="fine_form">
                     <div class="add-the-fine-block">
-                        <!-- Форма водителя -->
+                        <!-- Поле формы водителя -->
                         <fieldset class="fine-driver-form">
                             <legend>ФИО водителя</legend>
                             <div class="form-group-row">
@@ -70,7 +70,7 @@
                                        placeholder="Иванович">
                             </div>
                         </fieldset>
-                        <!-- Форма автомобиля -->
+                        <!-- Поле формы автомобиля -->
                         <fieldset class="fine-car-form">
                             <legend>Гос. рег. номер и название автомобиля</legend>
                             <div class="form-group-row">
@@ -80,7 +80,7 @@
                                 </select>
                             </div>
                         </fieldset>
-                        <!-- Форма штрафа -->
+                        <!-- Поле формы раздела и статьи штрафа -->
                         <fieldset class="offense-title-and-article-form">
                             <legend>Раздел и статья</legend>
                             <div class="form-group-row">
@@ -108,6 +108,7 @@
                             </div>
                             <div class="offence-article-description-block"></div>
                         </div>
+                        <!-- Поле формы даты и суммы штрафа -->
                         <fieldset class="date-and-punishment-form">
                             <legend>Дата и сумма нарушения</legend>
                             <div class="form-group-row">

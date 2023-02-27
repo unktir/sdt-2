@@ -26,13 +26,3 @@ if (!empty($_POST)) {
 
     $driver_class->addCarOffense($new_car_offense);
 }
-//$params = [
-//    'car_id' => '1',
-//    'offense_id' => '1',
-//    'offense_date' => '2023-02-23',
-//    'offense_time' => '21:08:00',
-//    'pay_bill_date' => '2023-02-24',
-//    'gis_discount_uptodate' => '2023-03-16',
-//    'last_bill_date' => '2023-04-25',
-//    'pay_bill_amount' => 500
-//];

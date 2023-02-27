@@ -53,7 +53,7 @@ class Router
 
     protected function abort($code = Response::NOT_FOUND)
     {
-        //http_response_code($code['code']);
+        http_response_code($code['code']);
 
         view("error-pages/{$code['code']}.php", $code);
 
