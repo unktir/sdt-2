@@ -148,6 +148,12 @@ footer {
     box-sizing: border-box;
 }
 
+/* Debug */
+* {
+    box-sizing: border-box;
+    /*outline: 1px solid limegreen !important;*/
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -167,6 +173,26 @@ footer {
     padding: 16px 40px;
     border-radius: 12px;
     background-color: #fff;
+}
+
+.success {
+    color: #34c759;
+}
+
+.error {
+    border-color: #ff3b30;
+}
+
+/*--------------------------------          Стрелки          --------------------------------*/
+.arrow {
+    width: 14px;
+}
+
+.up {
+    transform: rotate(180deg);
+}
+
+.down {
 }
 
 /*--------------------------------       Адаптивность        --------------------------------*/
@@ -221,11 +247,38 @@ footer {
     }
 }
 
-/*--------------------------------       Стиль штрафы        --------------------------------*/
+/*--------------------------------        Уведомление        --------------------------------*/
+.popup {
+    background: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 50px;
+    padding: 15px 30px;
+    max-height: 100vh;
+}
+
+.popup-wrap {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: #030303af;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+/*--------------------------------     Стиль авторизации     --------------------------------*/
 .authorisation-block {
     width: 400px;
     margin: 0 auto;
-    padding-bottom: 40px;
+}
+
+#sign-in-form {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -271,33 +324,153 @@ footer {
     background-color: #eaeaea;
 }
 
-/*--------------------------------          Стрелки          --------------------------------*/
-.arrow {
-    border: solid #333;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 4px;
-}
-
-.up {
-    transform: translateY(-50%) rotate(-135deg);
-}
-
-.down {
-    transform: translateY(-50%) rotate(45deg);
-}
-
-/*--------------------------------           Ошибка          --------------------------------*/
-.error {
-    border-color: #FF3B30;
-}
-/*-------------------------------------------------------------------------------------------*/
-
+/*--------------------------------       Стиль штрафов       --------------------------------*/
 .fines-block {
-    /*display: none;*/
     padding-bottom: 40px;
 }
 
+.fines-container {
+    padding: 24px;
+    border-radius: 12px;
+    background-color: #f8f8f8;
+}
+
+.fines-menu {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.fines-menu-item {
+    cursor: pointer;
+    padding: 4px 12px;
+    border-radius: 100px;
+}
+
+.fines-menu-item.selected {
+    background-color: #ffffff;
+    box-shadow: 0 4px 16px rgb(3 40 83 / 18%);
+}
+
+.fines-list {
+}
+
+.fines-payment-panel {
+    margin-top: 16px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 3px 21px rgb(3 40 83 / 10%);
+}
+
+.select-all {
+    display: flex;
+    align-items: center;
+}
+
+.select-all label,
+.fine-checkbox label {
+    margin-left: 8px;
+    pointer-events: none;
+}
+
+.fines-payment-panel-info {
+    display: flex;
+    margin-left: 8px;
+}
+
+.fines-payment-panel-info p:nth-child(2) {
+    margin-left: 8px;
+}
+
+.fines-payment-form {
+}
+
+.fine-payment-wrap-block {
+    border-radius: 8px;
+    margin-top: 16px;
+    box-shadow: 0 3px 21px rgb(3 40 83 / 10%);
+}
+
+.fine-payment-wrap {
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 16px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fine-payment-wrap.open {
+    border-radius: 8px 8px 0 0;
+}
+
+.fine-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.fine-info {
+}
+
+.fine-date-and-time {
+}
+
+.date-and-time-svg {
+    width: 14px;
+    margin-right: 4px;
+}
+
+.fine-car-info {
+}
+
+.fine-pay-bill-amount {
+    width: 100px;
+    text-align: right;
+}
+
+.fine-pay-bill-amount p:nth-child(2) {
+    font-size: 14px;
+}
+
+.fine-details {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.fine-details span {
+    margin-right: 8px;
+}
+
+.fine-payment-block {
+    display: none;
+    padding: 0 16px 16px;
+    background-color: #ffffff;
+    border-radius: 0 0 8px 8px;
+}
+
+.fine-payment-block p:nth-child(n+2) {
+    margin-top: 8px;
+}
+
+.payment-block {
+    display: none;
+    margin-top: 24px;
+    padding: 0 16px 0;
+    position: relative;
+}
+
+.payment-block .button {
+    position: absolute;
+    right: 6px;
+    bottom: 0;
+}
+
+/*--------------------------------       Адаптивность        --------------------------------*/
 @media screen and (max-width: 1025px) {
     .fines-block {
         padding-bottom: 32px;
@@ -316,74 +489,8 @@ footer {
     }
 }
 
-.fine-payments-block {
-    margin-top: 16px;
-}
-
-.fine-payment-wrap-block {
-    margin-top: 16px;
-}
-
-.fine-payment-wrap {
-    position: relative;
-    cursor: pointer;
-    border: 1px solid #dcdcdc;
-    border-radius: 8px;
-    background-color: #dcdcdc;
-    height: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.fine-payment-wrap:hover {
-    background-color: #eaeaea;
-}
-
-.fine-payment-wrap.open {
-    border-radius: 8px 8px 0 0;
-}
-
-.fine-checkbox {
-    display: flex;
-    align-items: center;
-    margin-left: 8px;
-}
-
-.fine-checkbox label {
-    margin-left: 4px;
-}
-
-.fine-payment-wrap p {
-    margin-right: 32px;
-}
-
-.fine-payment-wrap .arrow {
-    position: absolute;
-    right: 8px;
-    top: 50%;
-}
-
-.fine-payment-block {
-    display: none;
-    padding: 16px;
-    background-color: #f8f8f8;
-    border-radius: 0 0 8px 8px;
-}
-
-.fine-payment-block p {
-    margin-top: 8px;
-}
-
-.payment-block {
-    margin-top: 16px;
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    background-color: #f8f8f8;
-    border-radius: 8px;
-}
+/*--------------------------------Стиль панели администратора--------------------------------*/
+/*--------------------------------           Общие           --------------------------------*/
 
 .form-group-row {
     display: flex;
@@ -398,11 +505,6 @@ footer {
     width: 150px;
 }
 
-.payment-block .button {
-    margin: 0;
-}
-
-/*--------------------------------Стиль панели администратора--------------------------------*/
 .add-the-driver-form-block legend,
 .add-the-fine-form-block legend {
     font-weight: bold;
@@ -423,7 +525,7 @@ footer {
     margin: 16px 0 0;
 }
 
-/*--------------------------------Стиль панели администратора--------------------------------*/
+/*--------------------------------     Добавить водителя     --------------------------------*/
 .add-the-driver-form-block {
 }
 
@@ -465,32 +567,7 @@ footer {
 
 }
 
-/*--------------------------------        Уведомление        --------------------------------*/
-.popup {
-    background: white;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 50px;
-    padding: 15px 30px;
-    max-height: 100vh;
-}
-
-.popup-wrap {
-    position: fixed;
-    bottom: 0;
-    top: 0;
-    right: 0;
-    left: 0;
-    background: #030303af;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-}
-
-/*--------------------------------Стиль панели администратора--------------------------------*/
+/*--------------------------------      Добавить штраф       --------------------------------*/
 .add-the-fine-form-block {
     margin-top: 16px;
 }
