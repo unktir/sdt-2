@@ -19,7 +19,7 @@
                                        placeholder="Иван">
                             </div>
                             <div class="form-group-row">
-                                <label for="add_middle_name">Отчесво:</label>
+                                <label for="add_middle_name">Отчество:</label>
                                 <input required id="add_middle_name" name="add_middle_name" type="text"
                                        placeholder="Иванович">
                             </div>
@@ -65,7 +65,7 @@
                                 <input required id="pay_first_name" name="pay_first_name" type="text" placeholder="Иван">
                             </div>
                             <div class="form-group-row">
-                                <label for="pay_middle_name">Отчесво:</label>
+                                <label for="pay_middle_name">Отчество:</label>
                                 <input required id="pay_middle_name" name="pay_middle_name" type="text"
                                        placeholder="Иванович">
                             </div>
