@@ -8,6 +8,7 @@ function arrow_swap(p) {
         p.removeClass('up').addClass('down');
 }
 
+// Функция для всплывающего сообщения
 function pop_up_message(message) {
     $('main').append($('<div class="popup-wrap"><div class="popup" id="popup_message"></div></div>'));
     document.getElementById('popup_message').innerHTML = message;
@@ -46,53 +47,97 @@ function test_gov_reg_num(input_reg_reg, input_reg_num) {
 }
 
 /*--------------------------------       Скрипты штрафов       --------------------------------*/
+
+//Счётчик количества выбранных штрафов
+function countChecks() {
+    const checked = document.querySelectorAll('.fine-checkbox input[type="checkbox"]:checked');
+    let panel_info = $('.fines-payment-panel-info');
+    let counter = document.getElementById('counter');
+    let amount = document.getElementById('amount');
+    let final_amount = document.getElementById('final-amount');
+    let payment_block = $('.payment-block');
+
+    if (checked.length !== 0) {
+        let sum = 0;
+
+        panel_info.show();
+        counter.innerHTML = checked.length;
+        for (let checkbox of checked) {
+            let parent = document.getElementById(checkbox.id).parentElement.parentElement;
+
+            sum += parseInt($('.fine-pay-bill-amount span', parent)[0].textContent);
+        }
+        amount.innerHTML = sum;
+        final_amount.innerHTML = sum;
+        payment_block.show();
+    } else {
+        panel_info.hide();
+        counter.innerHTML = 0;
+        amount.innerHTML = 0;
+        final_amount.innerHTML = 0;
+        payment_block.hide();
+    }
+}
+
 //
 $(document).ready(function () {
-    // Вход
-    $('.sign-in').on('click', function () {
-        let gov_reg_num_flag = test_gov_reg_num(document.getElementById('registered_number'), document.getElementById('registered_region'))
-        if (gov_reg_num_flag) {
-            $('.functional').show();
-            $('.authorisation-block').hide();
-            $('.fines-block').show();
+    //Выбрать все чекбоксы
+    $('#select-all').click(function () {
+        if (this.checked) {
+            $(':checkbox').each(function () {
+                this.checked = true;
+            });
+        } else {
+            $(':checkbox').each(function () {
+                this.checked = false;
+            });
         }
-    });
-    // Выход
-    $('#exit').on('click', function () {
-        $('.functional').hide();
-        $('.authorisation-block').show();
-        $('.fines-block').hide();
-    });
-    // Принятие формы входа
-    $('#sign-in-form').on('submit', function (e) {
-        e.preventDefault();
-        $.ajax({
-            url: '/signIn',
-            method: 'POST',
-            dataType: 'html',
-            data: $(this).serialize(),
-            success: function () {
-                document.getElementById('sign-in-form').reset();
-                pop_up_message('Вы вошли!');
-            }
-        });
+        countChecks();
     });
     // Раскрытие и закрытие гармошки штрафов
-    $('.fine-payment-wrap').on('click', function (e) {
-        let qsw = $(this);
-        let qwsb = $('.fine-payment-block', qsw.parent());
-        if (!$(e.target).is('label') && !$(e.target).is('input')) {
-            if (!qsw.hasClass('open')) {
-                arrow_swap($('.arrow', qsw));
-                qsw.addClass('open');
-                qwsb.slideToggle(400);
-            } else {
-                arrow_swap($('.arrow', qsw));
-                qwsb.slideToggle(400);
-                setTimeout(function () {
-                    qsw.removeClass('open');
-                }, 400);
-            }
+    $('.fine-details').on('click', function () {
+        let fpw = $(this).parent();
+        let fpb = $('.fine-payment-block', fpw.parent());
+        if (!fpw.hasClass('open')) {
+            arrow_swap($('.arrow', $(this)));
+            fpw.addClass('open');
+            fpb.slideToggle(400);
+        } else {
+            arrow_swap($('.arrow', $(this)));
+            fpb.slideToggle(400);
+            setTimeout(function () {
+                fpw.removeClass('open');
+            }, 400);
+        }
+    });
+    // Переключение списка штрафов
+    $('.fines-menu-item').on('click', function () {
+        let show = $(this).get(0).dataset.show;
+        let fm = $('.fines-menu').children();
+
+        fm.removeClass('selected');
+        $('.fines-list').hide();
+        $(this).addClass('selected');
+        $('#' + show).show();
+    });
+    //Оплата штрафа
+    $('#fines-payment-form').on('submit', function (e) {
+        let payment_block = $('.payment-block');
+        e.preventDefault();
+        if (payment_block.css('display') === "block") {
+            $.ajax({
+                url: '/updateOffense',
+                method: 'POST',
+                dataType: 'html',
+                data: $(this).serialize(),
+                success: function (message) {
+                    pop_up_message(message);
+                    window.location.reload()
+                },
+                error: function (){
+                    pop_up_message('Ошибка отправки! Попробуйте повторить позже')
+                }
+            });
         }
     });
 });
