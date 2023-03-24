@@ -79,4 +79,12 @@ class Driver
             'car_id' => $car_id
         ])->get();
     }
+
+    public function updateCarOffensesStatusById($car_offense_id)
+    {
+        return $this->db->query('update car_offenses set status = :status where id = :id', [
+            'status' => 1,
+            'id' => $car_offense_id
+        ]);
+    }
 }
