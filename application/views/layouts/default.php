@@ -18,7 +18,7 @@
 <body>
 <div class="wrapper">
     <?php require app_path("views/$type/templates/header.php"); ?>
-    <?php require app_path("views/$type/pages/index.php"); ?>
+    <?php require app_path("views/$type/pages/$page.php"); ?>
     <?php require app_path("views/$type/templates/footer.php"); ?>
 </div>
 <script src="./scripts/script.js"></script>

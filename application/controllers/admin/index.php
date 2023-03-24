@@ -7,6 +7,7 @@ $offenses_chapters = $offense_class->getOffensesChapters();
 
 view('layouts/default.php', [
     'type' => 'admin',
+    'page' => 'index',
     'title' => 'Страница администратора',
     'offenses_chapters' => $offenses_chapters
 ]);
