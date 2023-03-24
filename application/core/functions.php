@@ -51,10 +51,10 @@ function view($path, $attributes = [])
     require app_path('views/' . $path);
 }
 
-function login($user)
+function login($user_data)
 {
     $_SESSION['user'] = [
-        'car_id' => $user['car_id']
+        'car_id' => $user_data['car_id']
     ];
 
     session_regenerate_id(true);
