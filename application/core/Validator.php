@@ -1,8 +1,8 @@
 <?php
 
-namespace core;
+namespace Core;
 
-class Validation
+class Validator
 {
     public static function string($value, $min = 1, $max = INF)
     {
