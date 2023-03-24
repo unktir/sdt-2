@@ -130,8 +130,8 @@ $(document).ready(function () {
                 method: 'POST',
                 dataType: 'html',
                 data: $(this).serialize(),
-                success: function (message) {
-                    pop_up_message(message);
+                success: function () {
+                    pop_up_message('Оплата прошла успешно!');
                     window.location.reload()
                 },
                 error: function (){
