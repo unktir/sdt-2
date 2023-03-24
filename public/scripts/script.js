@@ -46,6 +46,26 @@ function test_gov_reg_num(input_reg_reg, input_reg_num) {
     }
 }
 
+/*--------------------------------     Скрипты авторизации     --------------------------------*/
+//
+$('#sign-in-form').on('submit', function (e) {
+    e.preventDefault();
+
+    $.ajax({
+        url: '/session',
+        method: 'POST',
+        dataType: 'html',
+        data: $(this).serialize(),
+        success: function () {
+            pop_up_message('Вы вошли!');
+            window.location = '/'
+        },
+        error: function () {
+            pop_up_message('Ошибка отправки! Попробуйте повторить позже')
+        }
+    });
+});
+
 /*--------------------------------       Скрипты штрафов       --------------------------------*/
 
 //Счётчик количества выбранных штрафов
@@ -81,6 +101,21 @@ function countChecks() {
 
 //
 $(document).ready(function () {
+    //Выход
+    $('#exit').on('click', function () {
+        $.ajax({
+            url: '/session',
+            method: 'DELETE',
+            dataType: 'html',
+            success: function () {
+                pop_up_message('Вы вышли!');
+                window.location = '/login'
+            },
+            error: function () {
+                pop_up_message('Ошибка отправки! Попробуйте повторить позже')
+            }
+        });
+    });
     //Выбрать все чекбоксы
     $('#select-all').click(function () {
         if (this.checked) {
@@ -134,7 +169,7 @@ $(document).ready(function () {
                     pop_up_message('Оплата прошла успешно!');
                     window.location.reload()
                 },
-                error: function (){
+                error: function () {
                     pop_up_message('Ошибка отправки! Попробуйте повторить позже')
                 }
             });
@@ -175,6 +210,9 @@ $(document).ready(function () {
                 success: function (message) {
                     document.getElementById('add-the-fine-form').reset();
                     pop_up_message(message);
+                },
+                error: function () {
+                    pop_up_message('Ошибка отправки! Попробуйте повторить позже')
                 }
             });
         }
@@ -190,6 +228,9 @@ $(document).ready(function () {
             success: function (message) {
                 // document.getElementById('add-the-fine-form').reset();
                 pop_up_message(message);
+            },
+            error: function () {
+                pop_up_message('Ошибка отправки! Попробуйте повторить позже')
             }
         });
     });
@@ -269,6 +310,9 @@ function get_car_list_by_full_name() {
             success: function (option) {
                 car_select.html(option);
                 car_select.prop('disabled', false);
+            },
+            error: function () {
+                pop_up_message('Ошибка отправки! Попробуйте повторить позже')
             }
         });
     } else {
@@ -290,6 +334,9 @@ function get_article_by_chapter_id() {
         success: function (option) {
             article_select.html(option);
             article_select.prop('disabled', false);
+        },
+        error: function () {
+            pop_up_message('Ошибка отправки! Попробуйте повторить позже')
         }
     });
 }
@@ -308,6 +355,9 @@ function get_description_by_article_id() {
         },
         success: function (description) {
             $('.offence-article-description-block').html(description);
+        },
+        error: function () {
+            pop_up_message('Ошибка отправки! Попробуйте повторить позже')
         }
     });
     chapter_select.change(function () {

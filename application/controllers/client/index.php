@@ -7,7 +7,7 @@ use models\Driver;
 $db = App::resolve(Database::class);
 $driver_class = new Driver();
 
-$car_id = 2;
+$car_id = $_SESSION['user']['car_id'];
 
 $car_offenses = $driver_class->getCarOffensesById($car_id);
 
