@@ -34,7 +34,7 @@
                                                             <input id="car-offense-<?= $offense['id'] ?>"
                                                                    name="car-offense-id[]"
                                                                    value="<?= $offense['id'] ?>"
-                                                                   type="checkbox" onchange="countChecks()">
+                                                                   type="checkbox">
                                                             <label for="car-offense-<?= $offense['id'] ?>">
                                                                 Постановления от
                                                                 <time datetime="<?= $offense['pay_bill_date'] ?>">
