@@ -181,18 +181,18 @@ $(document).ready(function () {
 //
 $(document).ready(function () {
     // Раскрытие и закрытие гармошки описания штрафов
-    $('.offence-article-description-wrap').on('click', function () {
-        let qsw = $(this);
-        let qwsb = $('.offence-article-description-block', qsw.parent());
-        if (!qsw.hasClass('open')) {
-            arrow_swap($('.arrow', qsw));
-            qsw.addClass('open');
-            qwsb.slideToggle(400);
+    $('.fine-details').on('click', function () {
+        let oadw = $(this).parent();
+        let oadb = $('.offence-article-description-block', oadw.parent());
+        if (!oadw.hasClass('open')) {
+            arrow_swap($('.arrow', $(this)));
+            oadw.addClass('open');
+            oadb.slideToggle(400);
         } else {
-            arrow_swap($('.arrow', qsw));
-            qwsb.slideToggle(400);
+            arrow_swap($('.arrow', $(this)));
+            oadb.slideToggle(400);
             setTimeout(function () {
-                qsw.removeClass('open');
+                oadw.removeClass('open');
             }, 400);
         }
     });

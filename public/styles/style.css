@@ -626,41 +626,26 @@ footer {
 .offence-article-description-wrap-block {
     margin-top: 16px;
     display: none;
+    border-radius: 8px;
 }
 
 .offence-article-description-wrap {
-    position: relative;
-    cursor: pointer;
-    border: 1px solid #dcdcdc;
     border-radius: 8px;
-    background-color: #dcdcdc;
-    height: 50px;
+    background-color: #f8f8f8;
+    padding: 16px;
     display: flex;
+    flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-}
-
-.offence-article-description-wrap:hover {
-    background-color: #eaeaea;
 }
 
 .offence-article-description-wrap.open {
     border-radius: 8px 8px 0 0;
 }
 
-.offence-article-description-wrap h3 {
-    margin-left: 8px;
-}
-
-.offence-article-description-wrap .arrow {
-    position: absolute;
-    right: 8px;
-    top: 50%;
-}
-
 .offence-article-description-block {
     display: none;
-    padding: 16px;
+    padding: 0 16px 16px;
     background-color: #f8f8f8;
     border-radius: 0 0 8px 8px;
 }
