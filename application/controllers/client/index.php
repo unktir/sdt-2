@@ -14,8 +14,7 @@ $paid_car_offenses = $driver_class->getCarOffensesByIdAndStatus($car_id, true);
 
 $now = date('Y-m-d');
 
-view('layouts/default.php', [
-    'type' => 'client',
+view('client/layouts/default.php', [
     'page' => 'index',
     'title' => 'Оплата штрафов',
     'unpaid_car_offenses' => $unpaid_car_offenses,

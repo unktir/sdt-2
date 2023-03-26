@@ -2,7 +2,6 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,14 +11,13 @@
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
             integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
             crossorigin="anonymous"></script>
-    <!-- <script src="https://kit.fontawesome.com/11c459d6f0.js" crossorigin="anonymous"></script> -->
     <title><?= $title ?></title>
 </head>
 <body>
 <div class="wrapper">
-    <?php require app_path("views/$type/templates/header.php"); ?>
-    <?php require app_path("views/$type/pages/$page.php"); ?>
-    <?php require app_path("views/$type/templates/footer.php"); ?>
+    <?php require app_path("views/admin/templates/header.php"); ?>
+    <?php require app_path("views/admin/pages/$page.php"); ?>
+    <?php require app_path("views/admin/templates/footer.php"); ?>
 </div>
 <script src="./scripts/script.js"></script>
 </body>

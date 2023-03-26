@@ -1,7 +1,6 @@
 <?php
 
-view('layouts/default.php', [
-    'type' => 'client',
+view('client/layouts/default.php', [
     'page' => 'session/create',
     'title' => 'Авторизация'
 ]);
