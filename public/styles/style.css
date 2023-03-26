@@ -180,6 +180,10 @@ footer {
     color: #34c759;
 }
 
+.failure {
+    color: #ff3b30;
+}
+
 .error {
     border-color: #ff3b30;
 }

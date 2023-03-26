@@ -90,7 +90,7 @@
                                                                 <p>
                                                                     <b><span><?= $offense['pay_bill_amount'] ?></span> ₽</b>
                                                                 </p>
-                                                                <p class="error">
+                                                                <p class="failure">
                                                                     Просрочен
                                                                 </p>
                                                             <?php endif; ?>
