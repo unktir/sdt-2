@@ -1,3 +1,7 @@
+<?php
+$request_page = substr($_SERVER['REQUEST_URI'], 1);
+if (empty($request_page)) $request_page = 'index';
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -19,6 +23,6 @@
     <?php require app_path("views/admin/pages/$page.php"); ?>
     <?php require app_path("views/admin/templates/footer.php"); ?>
 </div>
-<script src="./scripts/script.js"></script>
+<script type="module" src="../scripts/pages/<?= $request_page ?>.js"></script>
 </body>
 </html>
