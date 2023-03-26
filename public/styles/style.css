@@ -354,10 +354,10 @@ footer {
 }
 
 .fines-list {
+    margin-top: 16px;
 }
 
 .fines-payment-panel {
-    margin-top: 16px;
     border-radius: 8px;
     background-color: #ffffff;
     padding: 16px;
@@ -386,13 +386,17 @@ footer {
     margin-left: 8px;
 }
 
-.fines-payment-form {
+#fines-payment-form {
+    margin-top: 16px;
 }
 
 .fine-payment-wrap-block {
     border-radius: 8px;
-    margin-top: 16px;
     box-shadow: 0 3px 21px rgb(3 40 83 / 10%);
+}
+
+.fine-payment-wrap-block:nth-child(n+2) {
+    margin-top: 16px;
 }
 
 .fine-payment-wrap {
