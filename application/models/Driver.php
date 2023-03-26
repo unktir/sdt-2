@@ -75,24 +75,25 @@ class Driver
 
     public function getCarOffensesById($car_id)
     {
-        return $this->db->query('select car_offenses.id, car_id, status, offense_date, offense_time, pay_bill_date, gis_discount_uptodate, last_bill_date, pay_bill_amount, offense_article_number, offense_article from car_offenses join offenses on offenses.id = car_offenses.offense_id where car_id = :car_id order by offense_date', [
+        return $this->db->query('select car_offenses.id, car_id, status, offense_date, offense_time, pay_bill_date, gis_discount_uptodate, last_bill_date, pay_bill_amount, date_paid, offense_article_number, offense_article from car_offenses join offenses on offenses.id = car_offenses.offense_id where car_id = :car_id order by offense_date', [
             'car_id' => $car_id
         ])->get();
     }
 
     public function getCarOffensesByIdAndStatus($car_id, $status)
     {
-        return $this->db->query('select car_offenses.id, car_id, status, offense_date, offense_time, pay_bill_date, gis_discount_uptodate, last_bill_date, pay_bill_amount, offense_article_number, offense_article from car_offenses join offenses on offenses.id = car_offenses.offense_id where car_id = :car_id and status = :status order by offense_date', [
+        return $this->db->query('select car_offenses.id, car_id, status, offense_date, offense_time, pay_bill_date, gis_discount_uptodate, last_bill_date, pay_bill_amount, date_paid, offense_article_number, offense_article from car_offenses join offenses on offenses.id = car_offenses.offense_id where car_id = :car_id and status = :status order by offense_date', [
             'car_id' => $car_id,
             'status' => $status
         ])->get();
     }
 
-    public function updateCarOffensesStatusById($car_offense_id)
+    public function updateCarOffensesStatusById($car_offense_id, $date_paid)
     {
-        return $this->db->query('update car_offenses set status = :status where id = :id', [
+        return $this->db->query('update car_offenses set status = :status,  date_paid = :date_paid where id = :id', [
             'status' => 1,
-            'id' => $car_offense_id
+            'id' => $car_offense_id,
+            'date_paid' => $date_paid
         ]);
     }
 }
