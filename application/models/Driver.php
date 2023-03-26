@@ -80,6 +80,14 @@ class Driver
         ])->get();
     }
 
+    public function getCarOffensesByIdAndStatus($car_id, $status)
+    {
+        return $this->db->query('select car_offenses.id, car_id, status, offense_date, offense_time, pay_bill_date, gis_discount_uptodate, last_bill_date, pay_bill_amount, offense_article_number, offense_article from car_offenses join offenses on offenses.id = car_offenses.offense_id where car_id = :car_id and status = :status order by offense_date', [
+            'car_id' => $car_id,
+            'status' => $status
+        ])->get();
+    }
+
     public function updateCarOffensesStatusById($car_offense_id)
     {
         return $this->db->query('update car_offenses set status = :status where id = :id', [
