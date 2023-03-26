@@ -1,0 +1,50 @@
+[
+  {
+    "full_name": {
+      "last_name": "Федорищев",
+      "first_name": "Валерий",
+      "middle_name": "Станиславович"
+    },
+    "auto_list": [
+      {
+        "auto_number": "С123СВ",
+        "auto_region": "790",
+        "auto_name": "Volkswagen Polo",
+        "offense_list": []
+      },
+      {
+        "auto_number": "А001АА",
+        "auto_region": "777",
+        "auto_name": "Porsche 911",
+        "offense_list": []
+      },
+      {
+        "auto_number": "А101АА",
+        "auto_region": "777",
+        "auto_name": "Лада Калина",
+        "offense_list": []
+      }
+    ]
+  },
+  {
+    "full_name": {
+      "last_name": "Федорищев",
+      "first_name": "Сергей",
+      "middle_name": "Станиславович"
+    },
+    "auto_list": [
+      {
+        "auto_number": "А001АА",
+        "auto_region": "111",
+        "auto_name": "Лада Калина",
+        "offense_list": []
+      },
+      {
+        "auto_number": "А001АА",
+        "auto_region": "112",
+        "auto_name": "Порш",
+        "offense_list": []
+      }
+    ]
+  }
+]
