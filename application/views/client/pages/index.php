@@ -62,10 +62,13 @@
                                                                 </time>
                                                             </p>
                                                         </div>
-                                                        <div class="fine-car-info" style="display: none">
-                                                            <p><span><?= 'Название авто' ?></span></p>
-                                                            <p><span><?= 'Рег. номер' ?></span>
-                                                                <span><?= 'Рег. регион' ?></span>
+                                                        <div class="fine-car-info">
+                                                            <p>
+                                                                <span><?= $car['auto_name'] ?></span>
+                                                            </p>
+                                                            <p>
+                                                                <span class="auto-number"><?= $car['auto_number'] ?></span>
+                                                                <span class="auto-number"><?= $car['auto_region'] ?></span>
                                                             </p>
                                                         </div>
                                                         <div class="fine-pay-bill-amount">
@@ -176,11 +179,13 @@
                                                             </time>
                                                         </p>
                                                     </div>
-                                                    <div class="fine-car-info" style="display: none">
-                                                        <p><span><?= 'Название авто' ?></span></p>
+                                                    <div class="fine-car-info">
                                                         <p>
-                                                            <span><?= 'Рег. номер' ?></span>
-                                                            <span><?= 'Рег. регион' ?></span>
+                                                            <span><?= $car['auto_name'] ?></span>
+                                                        </p>
+                                                        <p>
+                                                            <span class="auto-number"><?= $car['auto_number'] ?></span>
+                                                            <span class="auto-number"><?= $car['auto_region'] ?></span>
                                                         </p>
                                                     </div>
                                                     <div class="fine-pay-bill-amount">
@@ -226,7 +231,7 @@
                                                     </p>
                                                     <p>
                                                         <b>Водитель: </b>
-                                                        <span><?= '' ?></span>
+                                                        <span><?= $full_name['last_name'] . ' ' . $full_name['first_name'] . ' ' . $full_name['middle_name'] ?></span>
                                                     </p>
                                                 </div>
                                             </li>

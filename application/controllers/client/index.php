@@ -9,6 +9,9 @@ $driver_class = new Driver();
 
 $car_id = $_SESSION['user']['car_id'];
 
+$car = $driver_class->findCarById($car_id);
+$car['auto_number'] = mb_strtolower($car['auto_number'], 'UTF-8');
+
 $full_name = $driver_class->findDriverFullNameByCarId($car_id);
 $full_name['first_name'] = mb_substr($full_name['first_name'], 0, 1, 'UTF-8') . '.';
 $full_name['middle_name'] = mb_substr($full_name['middle_name'], 0, 1, 'UTF-8') . '.';
@@ -24,5 +27,6 @@ view('client/layouts/default.php', [
     'unpaid_car_offenses' => $unpaid_car_offenses,
     'paid_car_offenses' => $paid_car_offenses,
     'now' => $now,
+    'car' => $car,
     'full_name' => $full_name
 ]);

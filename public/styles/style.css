@@ -453,6 +453,26 @@ footer {
 }
 
 .fine-car-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fine-car-info p {
+    font-size: 14px;
+}
+
+.auto-number {
+    background-color: #dcdcdc;
+    padding: 2px 6px;
+}
+
+.auto-number:first-child {
+    border-radius: 4px 0 0 4px;
+}
+
+.auto-number:last-child {
+    border-radius: 0 4px 4px 0;
 }
 
 .fine-pay-bill-amount {
