@@ -127,7 +127,7 @@
                                                         </p>
                                                         <p>
                                                             <b>Водитель: </b>
-                                                            <span><?= '' ?></span>
+                                                            <span><?= $full_name['last_name'] . ' ' . $full_name['first_name'] . ' ' . $full_name['middle_name'] ?></span>
                                                         </p>
                                                     </div>
                                                 </li>

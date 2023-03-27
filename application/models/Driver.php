@@ -66,6 +66,12 @@ class Driver
         ])->find();
     }
 
+    public function findDriverFullNameByCarId($car_id) {
+        return $this->db->query('select drivers.id, last_name, first_name, middle_name from drivers join cars on cars.driver_id = drivers.id where cars.id = :id', [
+            'id' => $car_id
+        ])->find();
+    }
+
     public function getCarListByDriverId($driver_id)
     {
         return $this->db->query('select * from cars where driver_id = :driver_id', [
@@ -80,7 +86,7 @@ class Driver
         ])->get();
     }
 
-    public function getCarOffensesByIdAndStatus($car_id, $status)
+    public function getCarOffensesDataByIdAndStatus($car_id, $status)
     {
         return $this->db->query('select car_offenses.id, car_id, status, offense_date, offense_time, pay_bill_date, gis_discount_uptodate, last_bill_date, pay_bill_amount, date_paid, offense_article_number, offense_article from car_offenses join offenses on offenses.id = car_offenses.offense_id where car_id = :car_id and status = :status order by offense_date', [
             'car_id' => $car_id,
