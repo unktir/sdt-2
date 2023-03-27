@@ -33,10 +33,10 @@ p {
     background: none;
     color: #333;
     border: none;
-    margin: 0 10px;
     border-radius: 4px;
-    padding: 5px 15px;
+    padding: 4px 16px;
     cursor: pointer;
+    line-height: 1.15;
 }
 
 .button:hover {
@@ -129,7 +129,8 @@ table tbody tr:nth-child(even) {
 /*--------------------------------    Styles and Semantics   --------------------------------*/
 header {
     flex: 0 0 auto;
-    padding: 20px 0;
+    padding-top: 16px;
+    padding-bottom: 16px;
 }
 
 main {
@@ -138,7 +139,8 @@ main {
 
 footer {
     flex: 0 0 auto;
-    padding: 36px 50px 36px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 
@@ -166,14 +168,21 @@ footer {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 32px;
+    padding-right: 32px;
 }
 
 .content {
     padding: 16px 40px;
     border-radius: 12px;
     background-color: #fff;
+}
+
+.project-nav {
+}
+
+.functionality {
+    justify-content: flex-end;
 }
 
 .success {

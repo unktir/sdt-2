@@ -1,3 +1,5 @@
 <footer>
-    <div class="container"></div>
+    <div class="container">
+        <?php require app_path("views/client/templates/project_nav.php"); ?>
+    </div>
 </footer>
