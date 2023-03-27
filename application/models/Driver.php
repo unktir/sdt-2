@@ -57,6 +57,13 @@ class Driver
         ])->find();
     }
 
+    public function findCarById($id) {
+        return $this->db->query('select auto_number, auto_region, auto_name from cars where id = :id', [
+            'id' => $id
+        ])->find();
+
+    }
+
     public function findDriverIdByFullName($full_name = [])
     {
         return $this->db->query('select id from drivers where last_name = :last_name and first_name = :first_name and middle_name = :middle_name', [
