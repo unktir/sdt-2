@@ -640,6 +640,7 @@ footer {
     margin-top: 16px;
     display: none;
     border-radius: 8px;
+    box-shadow: 0 3px 21px rgb(3 40 83 / 10%);
 }
 
 .offence-article-description-wrap {
