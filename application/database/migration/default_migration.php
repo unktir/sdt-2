@@ -6,7 +6,7 @@
 use core\App;
 use core\Database;
 
-define('BASE_PATH', dirname(__DIR__, 3) . '/', false);
+define('BASE_PATH', dirname(__DIR__, 3) . '/');
 
 require BASE_PATH . 'application/core/functions.php';
 
@@ -44,7 +44,7 @@ $db->query("create table trpo2.offenses
     id                     int auto_increment
         primary key,
     chapter_id             int         not null,
-    offense_article_number varchar(20) not null,
+    offense_article_number varchar(40) not null,
     offense_article        text        not null,
     punishment_article     text        not null,
     constraint offense_article_number
@@ -83,6 +83,7 @@ $db->query("create table trpo2.car_offenses
     gis_discount_uptodate date                 not null,
     last_bill_date        date                 not null,
     pay_bill_amount       int                  not null,
+    date_paid             date                 null,
     constraint car_offenses_cars_id_fk
         foreign key (car_id) references trpo2.cars (id)
             on update cascade,
