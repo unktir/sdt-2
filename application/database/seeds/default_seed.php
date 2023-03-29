@@ -20,8 +20,7 @@ require app_path('configs/bootstrap.php');
 
 $db = App::resolve(Database::class);
 
-
-//$db->query('delete from offenses; delete from offenses_chapters');
+//$db->query('delete from offenses_chapters; delete from offenses');
 
 $fines_data = file_get_contents(app_path('database/data/fines_data.json'));
 $fines_data = json_decode($fines_data, true);
