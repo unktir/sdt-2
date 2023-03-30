@@ -33,7 +33,7 @@ $('#sign-in-form').on('submit', function (e) {
             data: $(this).serialize(),
             success: function () {
                 pop_up_message('Вы вошли!');
-                //window.location = '/'
+                window.location = '/';
             },
             error: function () {
                 pop_up_message('Ошибка отправки! Попробуйте повторить позже')
