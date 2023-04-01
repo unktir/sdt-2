@@ -110,14 +110,6 @@
                                                             <span><?= $offense['offense_article_number'] ?></span> -
                                                             <span><?= $offense['offense_article'] ?></span>
                                                         </p>
-                                                        <p style="display: none">
-                                                            Постановления от
-                                                            <time datetime="<?= $offense['pay_bill_date'] ?>">
-                                                                <?= date('d.m.Y', strtotime($offense['pay_bill_date'])) ?>
-                                                            </time>
-                                                            <br>
-                                                            10673342223462201<span><?= $offense['id'] ?></span>
-                                                        </p>
                                                         <p>
                                                             Подразделение<br>
                                                             УФК по Республике Башкортостан (МВД по РБ)
@@ -210,14 +202,6 @@
                                                         <b>Статья</b><br>
                                                         <span><?= $offense['offense_article_number'] ?></span> -
                                                         <span><?= $offense['offense_article'] ?></span>
-                                                    </p>
-                                                    <p style="display: none">
-                                                        Постановления от
-                                                        <time datetime="<?= $offense['pay_bill_date'] ?>">
-                                                            <?= date('d.m.Y', strtotime($offense['pay_bill_date'])) ?>
-                                                        </time>
-                                                        <br>
-                                                        10673342223462201<span><?= $offense['id'] ?></span>
                                                     </p>
                                                     <p>
                                                         Администратор<br>
