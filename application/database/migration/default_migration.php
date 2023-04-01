@@ -63,8 +63,6 @@ $db->query("create table trpo2.cars
     auto_number varchar(6)   not null,
     auto_region varchar(3)   not null,
     auto_name   varchar(255) not null,
-    constraint auto_number
-        unique (auto_number),
     constraint cars_drivers_id_fk
         foreign key (driver_id) references trpo2.drivers (id)
 );");
