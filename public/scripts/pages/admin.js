@@ -1,7 +1,6 @@
 import {pop_up_message} from '../templates/pop_up_message.js';
 import {arrow_swap} from '../templates/arrow_swap.js';
-import {test_string} from '../templates/test_full_name.js';
-import {test_reg_num, test_reg_reg} from '../templates/test_gov_reg_num.js';
+import {test_string, test_reg_num, test_reg_reg} from '../templates/validator.js';
 
 // Секция формы добавления водителя и/или автомобиля
 $(document).ready(function () {

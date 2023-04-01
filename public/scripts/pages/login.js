@@ -1,5 +1,5 @@
 import {pop_up_message} from '../templates/pop_up_message.js';
-import {test_reg_num, test_reg_reg} from "../templates/test_gov_reg_num.js";
+import {test_reg_num, test_reg_reg} from "../templates/validator.js";
 
 //
 document.getElementById('registered_number').onchange = function (e) {
