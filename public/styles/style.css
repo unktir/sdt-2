@@ -449,7 +449,10 @@ footer {
 
 .date-and-time-svg {
     width: 14px;
-    margin-right: 4px;
+}
+
+.fine-date-and-time time {
+    margin-left: 4px;
 }
 
 .fine-car-info {
@@ -490,8 +493,8 @@ footer {
     align-items: center;
 }
 
-.fine-details span {
-    margin-right: 8px;
+.fine-details img {
+    margin-left: 8px;
 }
 
 .fine-payment-block {
