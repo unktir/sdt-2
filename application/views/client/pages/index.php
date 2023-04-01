@@ -160,12 +160,18 @@
                                                         </p>
                                                     </div>
                                                     <div class="fine-date-and-time">
-                                                        <p>Дата:
+                                                        <p>
+                                                            <img class="date-and-time-svg"
+                                                                 src="images\calendar-regular.svg"
+                                                                 alt="calendar">
                                                             <time datetime="<?= $offense['offense_date'] ?>">
                                                                 <?= date('d.m.Y', strtotime($offense['offense_date'])) ?>
                                                             </time>
                                                         </p>
-                                                        <p>Время:
+                                                        <p>
+                                                            <img class="date-and-time-svg"
+                                                                 src="images\clock-regular.svg"
+                                                                 alt="clock">
                                                             <time datetime="<?= $offense['offense_time'] ?>">
                                                                 <?= date('H:i', strtotime($offense['offense_time'])) ?>
                                                             </time>
