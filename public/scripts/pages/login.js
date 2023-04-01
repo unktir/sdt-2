@@ -36,8 +36,8 @@ $('#sign-in-form').on('submit', function (e) {
         method: 'POST',
         dataType: 'html',
         data: $(this).serialize(),
-        success: function () {
-            pop_up_message('Вы вошли!');
+        success: function (message) {
+            pop_up_message(message);
             window.location = '/';
         },
         error: function () {

@@ -13,13 +13,17 @@ $car_data = [
 
 $driver_class = new Driver();
 
-$car_id = $driver_class->findCarIdByGovRegNum($car_data['auto_number'], $car_data['auto_region'])['id'];
+$car_id = $driver_class->findCarIdByGovRegNum($car_data['auto_number'], $car_data['auto_region']);
 
 if ($car_id) {
     login([
-        'car_id' => $car_id,
+        'car_id' => $car_id['id'],
     ]);
+
+    echo 'Вы вошли!';
 
     //header('location: /');
     exit;
 }
+
+echo 'Номера нет в базе!';
