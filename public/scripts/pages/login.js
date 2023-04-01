@@ -3,7 +3,7 @@ import {test_reg_num, test_reg_reg} from "../templates/test_gov_reg_num.js";
 
 //
 document.getElementById('registered_number').onchange = function (e) {
-    let result = test_reg_num(e.target)
+    let result = test_reg_num(e.target.value);
 
     if (result)
         $(this).removeClass('error');
@@ -13,7 +13,7 @@ document.getElementById('registered_number').onchange = function (e) {
 
 //
 document.getElementById('registered_region').onchange = function (e) {
-    let result = test_reg_reg(e.target);
+    let result = test_reg_reg(e.target.value);
 
     if (result)
         $(this).removeClass('error');
