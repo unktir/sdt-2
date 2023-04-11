@@ -21,7 +21,7 @@ require app_path('configs/bootstrap.php');
 $db = App::resolve(Database::class);
 
 // Создание таблицы глав нарушений
-$db->query("create table trpo2.offenses_chapters
+$db->query("create table `sdt-2`.offenses_chapters
 (
     id    int auto_increment
         primary key,
@@ -29,7 +29,7 @@ $db->query("create table trpo2.offenses_chapters
 );");
 
 // Создание таблицы водителей
-$db->query("create table trpo2.drivers
+$db->query("create table `sdt-2`.drivers
 (
     id          int auto_increment
         primary key,
@@ -39,7 +39,7 @@ $db->query("create table trpo2.drivers
 );");
 
 // Создание таблицы нарушений
-$db->query("create table trpo2.offenses
+$db->query("create table `sdt-2`.offenses
 (
     id                     int auto_increment
         primary key,
@@ -50,12 +50,12 @@ $db->query("create table trpo2.offenses
     constraint offense_article_number
         unique (offense_article_number),
     constraint offenses_offenses_chapters_id_fk
-        foreign key (chapter_id) references trpo2.offenses_chapters (id)
+        foreign key (chapter_id) references `sdt-2`.offenses_chapters (id)
             on update cascade on delete cascade
 );");
 
 // Создание таблицы автомобилей
-$db->query("create table trpo2.cars
+$db->query("create table `sdt-2`.cars
 (
     id          int auto_increment
         primary key,
@@ -64,11 +64,11 @@ $db->query("create table trpo2.cars
     auto_region varchar(3)   not null,
     auto_name   varchar(255) not null,
     constraint cars_drivers_id_fk
-        foreign key (driver_id) references trpo2.drivers (id)
+        foreign key (driver_id) references `sdt-2`.drivers (id)
 );");
 
 // Создание таблицы нарушений автомобиля
-$db->query("create table trpo2.car_offenses
+$db->query("create table `sdt-2`.car_offenses
 (
     id                    int auto_increment
         primary key,
@@ -83,9 +83,9 @@ $db->query("create table trpo2.car_offenses
     pay_bill_amount       int                  not null,
     date_paid             date                 null,
     constraint car_offenses_cars_id_fk
-        foreign key (car_id) references trpo2.cars (id)
+        foreign key (car_id) references `sdt-2`.cars (id)
             on update cascade,
     constraint car_offenses_offenses_id_fk
-        foreign key (offense_id) references trpo2.offenses (id)
+        foreign key (offense_id) references `sdt-2`.offenses (id)
             on update cascade
 );");
