@@ -11,7 +11,7 @@ if (empty($request_page)) $request_page = 'index';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" href="data:;base64,=">
     <link rel="stylesheet" href="./styles/reset.css">
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/<?= $request_page ?>.css">
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
             integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
             crossorigin="anonymous"></script>

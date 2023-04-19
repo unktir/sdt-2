@@ -1,0 +1,339 @@
+/*================================     Собственные стили     ================================*/
+/*--------------------------------        Общие стили        --------------------------------*/
+/*--------------------------------         Basic HTML        --------------------------------*/
+html, body {
+    height: 100%;
+    line-height: 1.42;
+    font-size: 16px;
+    color: #333;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    background-color: aliceblue;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+    text-align: center;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+/*--------------------------------      Forms and Input      --------------------------------*/
+.button {
+    background: none;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 16px;
+    cursor: pointer;
+    line-height: 1.15;
+}
+
+.button:hover {
+    background-color: #d8dfe6;
+}
+
+label {
+    display: block;
+    cursor: pointer;
+}
+
+fieldset,
+legend {
+    margin: 0;
+    padding: 0;
+    padding-inline: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+fieldset {
+    margin-inline: 0;
+    padding-block: 0;
+}
+
+/*--------------------------------           Links           --------------------------------*/
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*--------------------------------           Lists           --------------------------------*/
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+ol {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 0;
+}
+
+/*--------------------------------           Tables          --------------------------------*/
+table {
+    table-layout: fixed;
+    width: 100%;
+    border: 1px solid #eee;
+    border-collapse: collapse;
+}
+
+table th {
+    padding: 5px;
+    border: 1px solid #dddddd;
+    background-color: #efefef;
+}
+
+table td {
+    text-align: left;
+    padding: 5px 10px;
+    border: 1px solid #eee;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: white;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f3f9ff;
+}
+
+/*--------------------------------    Styles and Semantics   --------------------------------*/
+header {
+    flex: 0 0 auto;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex: 0 0 auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+
+/*--------------------------------           Другое           --------------------------------*/
+*,
+:before,
+:after {
+    box-sizing: border-box;
+}
+
+/* Debug */
+* {
+    box-sizing: border-box;
+    /*outline: 1px solid limegreen !important;*/
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.content {
+    padding: 16px 40px;
+    border-radius: 12px;
+    background-color: #fff;
+}
+
+.project-nav {
+}
+
+.functionality {
+    justify-content: flex-end;
+}
+
+.success {
+    color: #34c759;
+}
+
+.failure {
+    color: #ff3b30;
+}
+
+.error {
+    border-color: #ff3b30;
+}
+
+/*--------------------------------          Стрелки          --------------------------------*/
+.arrow {
+    width: 14px;
+}
+
+.up {
+    transform: rotate(180deg);
+}
+
+.down {
+}
+
+/*--------------------------------       Адаптивность        --------------------------------*/
+@media screen and (max-width: 1025px) {
+    .container {
+    }
+
+    .content {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .content {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    html,
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    header {
+        padding: 10px 0;
+    }
+
+    nav a {
+        text-align: center;
+    }
+
+    nav a.button {
+        padding: 5px;
+    }
+
+    .content {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+/*--------------------------------        Уведомление        --------------------------------*/
+.popup {
+    background: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 50px;
+    padding: 15px 30px;
+    max-height: 100vh;
+}
+
+.popup-wrap {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: #030303af;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+/*--------------------------------     Стиль авторизации     --------------------------------*/
+.authorisation-block {
+    width: 400px;
+    margin: 0 auto;
+}
+
+#sign-in-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.authorisation-block fieldset {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#car_number {
+    text-align: center;
+    font-weight: bold;
+}
+
+.authorisation-block fieldset input {
+    margin-top: 16px;
+    padding: 4px;
+    text-align: center;
+    font-size: 24px;
+}
+
+#registered_number {
+    width: 150px;
+}
+
+#registered_region {
+    width: 75px;
+}
+
+.sign-in {
+    margin-top: 16px;
+}
+
+.sign-in, .submit {
+    background-color: #dcdcdc;
+}
+
+.sign-in:hover, .submit:hover {
+    cursor: pointer;
+    background-color: #eaeaea;
+}
