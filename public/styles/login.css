@@ -310,8 +310,11 @@ footer {
     font-weight: bold;
 }
 
-.authorisation-block fieldset input {
-    margin-top: 16px;
+.car-number-input {
+    margin-top: 8px;
+}
+
+.car-number-input input {
     padding: 4px;
     text-align: center;
     font-size: 24px;
