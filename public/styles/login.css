@@ -197,6 +197,16 @@ footer {
     border-color: #ff3b30;
 }
 
+/*--------------------------------          Кнопки           --------------------------------*/
+.submit {
+    background-color: #dcdcdc;
+}
+
+.submit:hover {
+    cursor: pointer;
+    background-color: #eaeaea;
+}
+
 /*--------------------------------          Стрелки          --------------------------------*/
 .arrow {
     width: 14px;
@@ -318,25 +328,19 @@ footer {
     padding: 4px;
     text-align: center;
     font-size: 24px;
+    border: 1px solid grey;
 }
 
 #registered_number {
     width: 150px;
+    border-radius: 4px 0 0 4px;
 }
 
 #registered_region {
     width: 75px;
+    border-radius: 0 4px 4px 0;
 }
 
-.sign-in {
+#sign-in-form button {
     margin-top: 16px;
-}
-
-.sign-in, .submit {
-    background-color: #dcdcdc;
-}
-
-.sign-in:hover, .submit:hover {
-    cursor: pointer;
-    background-color: #eaeaea;
 }

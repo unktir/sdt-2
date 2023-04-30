@@ -197,6 +197,16 @@ footer {
     border-color: #ff3b30;
 }
 
+/*--------------------------------          Кнопки           --------------------------------*/
+.submit {
+    background-color: #dcdcdc;
+}
+
+.submit:hover {
+    cursor: pointer;
+    background-color: #eaeaea;
+}
+
 /*--------------------------------          Стрелки          --------------------------------*/
 .arrow {
     width: 14px;

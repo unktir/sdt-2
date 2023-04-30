@@ -197,6 +197,16 @@ footer {
     border-color: #ff3b30;
 }
 
+/*--------------------------------          Кнопки           --------------------------------*/
+.submit {
+    background-color: #dcdcdc;
+}
+
+.submit:hover {
+    cursor: pointer;
+    background-color: #eaeaea;
+}
+
 /*--------------------------------          Стрелки          --------------------------------*/
 .arrow {
     width: 14px;
@@ -334,19 +344,6 @@ footer {
 
 #registered_region {
     width: 75px;
-}
-
-.sign-in {
-    margin-top: 16px;
-}
-
-.sign-in, .submit {
-    background-color: #dcdcdc;
-}
-
-.sign-in:hover, .submit:hover {
-    cursor: pointer;
-    background-color: #eaeaea;
 }
 
 /*--------------------------------       Стиль штрафов       --------------------------------*/
