@@ -323,13 +323,13 @@ footer {
     width: 150px;
 }
 
-.add-the-driver-form-block legend,
-.add-the-fine-form-block legend {
+#add-the-driver-form legend,
+#add-the-fine-form legend {
     font-weight: bold;
 }
 
-.add-the-driver-form-block .form-group-row,
-.add-the-fine-form-block .form-group-row {
+#add-the-driver-form .form-group-row,
+#add-the-fine-form .form-group-row {
     margin-top: 10px;
     justify-content: space-between;
 }
@@ -338,8 +338,8 @@ footer {
     width: 300px;
 }
 
-.add-the-driver-form-block .button.submit,
-.add-the-fine-form-block .button.submit {
+#add-the-driver-form .button.submit,
+#add-the-fine-form .button.submit {
     margin: 16px 0 0;
 }
 
@@ -351,7 +351,6 @@ footer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-top: 8px;
 }
 
 .driver-form {
@@ -435,7 +434,7 @@ footer {
 
 .offence-article-description-wrap {
     border-radius: 8px;
-    background-color: #f8f8f8;
+    background-color: #ffffff;
     padding: 16px;
     display: flex;
     flex-wrap: nowrap;
@@ -467,4 +466,27 @@ footer {
 
 .date-and-punishment-form span {
     margin-left: 4px;
+}
+
+/*--------------*/
+.forms-menu {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.forms-menu-item {
+    cursor: pointer;
+    padding: 4px 16px 0;
+}
+
+.forms-menu-item.selected {
+    background-color: #f8f8f8;
+    border-radius: 12px 12px 0 0;
+}
+
+.forms-container {
+    padding: 24px;
+    border-radius: 0 12px 12px 12px;
+    background-color: #f8f8f8;
 }

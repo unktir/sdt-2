@@ -2,7 +2,21 @@ import {pop_up_message} from '../templates/pop_up_message.js';
 import {arrow_swap} from '../templates/arrow_swap.js';
 import {test_string, test_reg_num, test_reg_reg} from '../templates/validator.js';
 
-// Секция формы добавления водителя и/или автомобиля
+//
+$(document).ready(function () {
+    // Переключение форм
+    $('.forms-menu-item').on('click', function () {
+        let show = $(this).get(0).dataset.show;
+        let fm = $('.forms-menu').children();
+
+        fm.removeClass('selected');
+        $('form').hide();
+        $(this).addClass('selected');
+        $('#' + show).show();
+    });
+});
+
+// Секция формы добавления в базу
 $(document).ready(function () {
     // Валидация ФИО
     $('.driver-form input', '#add-the-driver-form').on('change', function (e) {
