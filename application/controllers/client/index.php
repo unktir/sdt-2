@@ -23,7 +23,7 @@ $now = date('Y-m-d');
 
 view('client/layouts/default.php', [
     'page' => 'index',
-    'title' => 'Оплата штрафов',
+    'title' => 'Оплата штрафов ГИБДД',
     'unpaid_car_offenses' => $unpaid_car_offenses,
     'paid_car_offenses' => $paid_car_offenses,
     'now' => $now,
