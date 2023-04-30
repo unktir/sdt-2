@@ -14,7 +14,7 @@
                                type="text" placeholder="777" maxlength="3">
                     </div>
                 </fieldset>
-                <button class="button sign-in">Проверить штрафы</button>
+                <button class="button submit">Проверить штрафы</button>
             </form>
         </section>
     </div>

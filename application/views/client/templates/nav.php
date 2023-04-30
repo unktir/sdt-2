@@ -1,5 +1,5 @@
 <nav class="functionality">
     <?php if ($_SESSION['user'] ?? false) : ?>
-        <button class="button" id="exit" type="button">Выйти</button>
+        <button class="button submit" id="exit" type="button">Назад</button>
     <?php endif; ?>
 </nav>
