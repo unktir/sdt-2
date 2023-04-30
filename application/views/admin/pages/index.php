@@ -2,7 +2,7 @@
     <div class="container">
         <!-- Форма добавления водителя и/или автомобиля -->
         <section class="add-the-driver-form-block content">
-            <h2>Добавить водителя и/или автомобиль</h2>
+            <h2>Добавить в базу</h2>
             <form id="add-the-driver-form" name="add-the-driver-form">
                 <div class="add-the-driver-block">
                     <!-- Поле формы водителя -->
